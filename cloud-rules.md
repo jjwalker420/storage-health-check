@@ -296,7 +296,7 @@ If yes, send.
 **Scoped override, Coloween 2026 Meta ads. Approved by JJ 2026-09-09. Expires 2026-10-31, event night.**
 For Meta ad account **359511371520677** and Coloween 2026 only, Claude may operate the account: upload
 creative, build campaigns, ad sets and ads, enable and pause them, and move budget between existing ad
-sets. **Ceiling: $100/day in total account spend.** Anything that would push the account above $100/day,
+sets. **Ceiling: $130/day in total account spend.** Anything that would push the account above $130/day,
 or the season above the $9,500 Meta budget, stops and asks first. **This is a deliberate exception to the
 HUMAN ONLY money line in global §4, granted by JJ for this one account and this one season.**
 
