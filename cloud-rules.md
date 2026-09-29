@@ -65,7 +65,7 @@ this whole pack exists to prevent.
 
 # The canonical rules, copied live from JJ's engine
 
-Rules as of 2026-09-27. Do not edit them here: edit the source, the nightly re-stamps.
+Rules as of 2026-09-29. Do not edit them here: edit the source, the nightly re-stamps.
 
 Everything below names paths under `~/.claude`. A cloud session cannot open any of them. The
 rules still apply in full; only the pointers are unreachable, so follow the text you have here.
@@ -259,7 +259,7 @@ If yes, send.
 
 **A claim about what JJ has or hasn't done is a claim like any other: check it, or don't make it.** Closing lines that hand him a to-do ("still sitting in drafts", "still needs sending") assert current state and need the same lookup as any other fact. Read the thread, not the memory of writing the draft.
 
-**A search scoped to inbound mail can never prove nobody replied.** `from:<domain>` answers whether they wrote, not whether JJ answered. Read the whole thread, both directions, before saying anything is unanswered, still sitting, still in drafts, or still owed by JJ. When a truth file and a fresh lookup disagree, stop and reconcile: a narrow query looks newer while being blind. (2026-09-09: reported Josh's 9/4 question as five days unanswered when JJ had answered it 9/8 in that same thread, and `TRUTH.md` line 27 already recorded that reply in full.)
+**A search scoped to inbound mail can never prove nobody replied.** `from:<domain>` answers whether they wrote, not whether JJ answered. Read the whole thread, both directions, before saying anything is unanswered, still sitting, still in drafts, or still owed by JJ. When a truth file and a fresh lookup disagree, stop and reconcile: a narrow query looks newer while being blind.
 
 **A zero or a green is not evidence until you know it could have come out otherwise.** Before citing any all-clear, feed the thing a case it MUST flag and watch it flag. A zero you can't tell apart from a dead credential is not a zero. Ask what WROTE a health signal before trusting it. Test state paths take an env override; prod never does.
 
@@ -275,7 +275,7 @@ If yes, send.
 
 **An email body proves nothing about its attachments.** `gmail_read_message` returns the body only, so a message that reads as a bare signature can still carry the files you want. Prove absence with a `filename:` or `has:attachment` search or `gmail_list_attachments` before writing "no attachment". (JJ, 2026-09-12.)
 
-**Before a brief says something does not exist, list `~/.claude/scheduled-tasks/` and `~/.claude/hooks/` and grep `settings.json`.** A mechanism that exists and isn't in the brief re-specs itself. (2026-09-12: a paid-media brief proposed a daily job and a spend hook that had both been live for days; both reviewers caught it, the brief's author had not looked.)
+**Before a brief says something does not exist, list `~/.claude/scheduled-tasks/` and `~/.claude/hooks/` and grep `settings.json`.** A mechanism that exists and isn't in the brief re-specs itself.
 
 ---
 
@@ -333,29 +333,26 @@ write over the ceiling; v1.2 adds a PostToolUse read-back. Selftest: `Coloween-2
 
 **Never carry a tuning threshold across a redesign.** Cache the raw fetch, score a real sweep, read the number off the distribution. Confirm you can actually get the credential before writing any client against an API.
 
-**Say what the thing is before you object to it.** One line on the problem and whether it matters, then ONE recommendation. Option menus are for close calls that are genuinely his. (2026-08-25, four choices offered on untracked files that never reach the live site.)
+**Say what the thing is before you object to it.** One line on the problem and whether it matters, then ONE recommendation. Option menus are for close calls that are genuinely his.
 
-**Before enabling an inherited ad campaign, read what's already inside it: negative keyword lists, audience exclusions, disapproved assets, old date ranges.** Enabled, eligible and serving still isn't buying. A live campaign with near-zero impressions after 7 days is blocked, not underfunded. (2026-09-01: a 2022 agency's shared "Master" negative list blocked `denver halloween`, `denver halloween events`, `halloween events denver` and `halloween party denver` on the one live Coloween campaign. 15 paid sessions in all of August. Google had flagged it at +14.2% the whole time and nobody read the recommendations feed.)
+**Before enabling an inherited ad campaign, read what's already inside it: negative keyword lists, audience exclusions, disapproved assets, old date ranges.** Enabled, eligible and serving still isn't buying. A live campaign with near-zero impressions after 7 days is blocked, not underfunded.
 
-**On any bug, test failure, or unexpected behavior in code, invoke `systematic-debugging` before proposing a fix. Before any multi-step build, invoke `writing-plans` first.** Both fire automatically, every dev session, no need to ask. Root-cause first stops patches that mask the real problem. (2026-09-01, restored from `_archive/culled-2026-08-16/` after JJ flagged the recurring pattern: Coloween Reddit engine, AiOS dead-man check, Gmail Open Tracker Outlook build all shipped as fixed while broken underneath.) **A multi-step build that changes something running live (a daemon, a deployed site, a scheduled job) also gets its written plan reviewed by the engineer and Boris in parallel before any code: fold every finding, show JJ, build on his go. Skip it for a one-file fix.** (JJ approved 2026-09-27. On the Jarvis freshness plan the two reviews caught a Clients-tab crash, a silent chat-log delete, and three gates that passed on broken code.)
+**On any bug, test failure, or unexpected behavior in code, invoke `systematic-debugging` before proposing a fix. Before any multi-step build, invoke `writing-plans` first.** Both fire automatically, every dev session, no need to ask. Root-cause first stops patches that mask the real problem. **A multi-step build that changes something running live (a daemon, a deployed site, a scheduled job) also gets its written plan reviewed by the engineer and Boris in parallel before any code: fold every finding, show JJ, build on his go. Skip it for a one-file fix.** (JJ approved 2026-09-27.)
 
-**A PDF (or any Puppeteer render) that comes out wrong gets diffed against a known-clean render from the same script before any parameter changes, per `systematic-debugging` Phase 2.** Guessing at margin or size values in sequence is the anti-pattern the skill already names; a header/footer collision after a forced page break can look identical at three different margin sizes because the margin was never the cause. (2026-09-02, three margin guesses on the Neil user-guide PDF before comparing against the working IT-brief PDF found the real fix: drop the running header.)
+**A PDF (or any Puppeteer render) that comes out wrong gets diffed against a known-clean render from the same script before any parameter changes, per `systematic-debugging` Phase 2.** Guessing at margin or size values in sequence is the anti-pattern the skill already names; a header/footer collision after a forced page break can look identical at three different margin sizes because the margin was never the cause.
 
-**A single tool saying no is not the system saying no.** Before reporting a tool's refusal as a blocker for JJ to handle, try every other available tool that could reach the same target. When something is found disabled or blocked, also check what happens when the block lifts, don't wait to be asked. (2026-09-01: n8n MCP access was off for one workflow, reported as JJ's to disable, when the browser tool sitting open the whole time could log into the editor and flip it in under a minute. Same session, knew the old tracker was active, knew it pointed at every already-sent email, knew the quota reset would wake it back up, and didn't say so until asked.)
+**A single tool saying no is not the system saying no.** Before reporting a tool's refusal as a blocker for JJ to handle, try every other available tool that could reach the same target. When something is found disabled or blocked, also check what happens when the block lifts, don't wait to be asked.
 
 **For Coloween, lead with what people lose by missing the night and contrast it with the ordinary alternative. Never lead with authenticity claims or generic brand declarations.**
 
 **What leaves for an outside party is only what they need to do their job.** Our drafts, our version
 history, our tooling and our verification steps stay inside. Never tell someone a document "replaces
 the February file" when they never got the February file. Before anything ships, strip every reference
-to what we were working on, every internal file path, and every superseded draft. (2026-09-09: the
-Lori tax package was staged with a 48-page superseded working file and a dozen references to drafts
-she had never seen.)
+to what we were working on, every internal file path, and every superseded draft.
 
 **When one person's dashboard is built off another's, keep the shared shell and rail and let each left
 column be that person's actual unit of work.** A panel the second person uses every day earns its place
-even where the first person's page rules it out. (2026-09-22, JJ approved Aubree's Today as her deals
-with her six doors on it, against the no-door-tiles call made for Josh's page on 9/20.)
+even where the first person's page rules it out. (JJ, 2026-09-22.)
 
 ---
 
