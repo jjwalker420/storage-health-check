@@ -65,7 +65,7 @@ this whole pack exists to prevent.
 
 # The canonical rules, copied live from JJ's engine
 
-Rules as of 2026-09-25. Do not edit them here: edit the source, the nightly re-stamps.
+Rules as of 2026-09-27. Do not edit them here: edit the source, the nightly re-stamps.
 
 Everything below names paths under `~/.claude`. A cloud session cannot open any of them. The
 rules still apply in full; only the pointers are unreachable, so follow the text you have here.
