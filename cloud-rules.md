@@ -313,7 +313,7 @@ Email stays draft-only. The override dies on 2026-10-31 without being revoked.
 🔒 **Mechanized 2026-09-09:** `~/.claude/hooks/meta-spend-guard.py` (PreToolUse) reads the live account and blocks any Meta
 write over the ceiling; v1.2 adds a PostToolUse read-back. Selftest: `Coloween-2026/marketing/paid-2026/spend-guard-selftest.sh`.
 
-**Scoped override, Coloween sponsorship 2026 LinkedIn sends. Expires when the campaign closes.** For this campaign only, Claude may send LinkedIn connection requests and DMs from JJ's logged-in account after JJ batch-approves the exact text: 10-15/day max, random gaps, business hours, human pace, one browser, never parallel. Any LinkedIn warning or friction screen = immediate stop and report. This overrides the standing no-LinkedIn-automation practice for this campaign alone. Email stays draft-only everywhere: the override never touches the never-send-email rule.
+**Scoped override, Coloween sponsorship 2026 LinkedIn sends. Expires 2026-10-31, event night (JJ dated it 2026-09-29).** For this campaign only, Claude may send LinkedIn connection requests and DMs from JJ's logged-in account after JJ batch-approves the exact text: 10-15/day max, random gaps, business hours, human pace, one browser, never parallel. Any LinkedIn warning or friction screen = immediate stop and report. This overrides the standing no-LinkedIn-automation practice for this campaign alone. Email stays draft-only everywhere: the override never touches the never-send-email rule.
 
 ---
 
