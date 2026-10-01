@@ -65,7 +65,7 @@ this whole pack exists to prevent.
 
 # The canonical rules, copied live from JJ's engine
 
-Rules as of 2026-09-29. Do not edit them here: edit the source, the nightly re-stamps.
+Rules as of 2026-09-30. Do not edit them here: edit the source, the nightly re-stamps.
 
 Everything below names paths under `~/.claude`. A cloud session cannot open any of them. The
 rules still apply in full; only the pointers are unreachable, so follow the text you have here.
@@ -299,28 +299,6 @@ If yes, send.
 
 **System-wide and cross-folder work runs from a session opened at `~/Desktop/HOME`**, not from inside a client or venture folder. Where you launch decides which CLAUDE.md files load and which auto-memory directory gets written: the memory path comes from the git repo, so what a client session learns lands in that client's memory folder and a HOME session never sees it. Don't count on the hook to catch this.
 
-**Scoped override, Coloween 2026 Meta ads. Approved by JJ 2026-09-09. Expires 2026-10-31, event night.**
-For Meta ad account **359511371520677** and Coloween 2026 only, Claude may operate the account: upload
-creative, build campaigns, ad sets and ads, enable and pause them, and move budget between existing ad
-sets. **Ceiling: $130/day in total account spend.** Anything that would push the account above $130/day,
-or the season above the $9,500 Meta budget, stops and asks first. **This is a deliberate exception to the
-HUMAN ONLY money line in global §4, granted by JJ for this one account and this one season.**
-
-Inside the override, four things still hold. **Read the account back after every write**, because an API
-success is not a correct value (a geo key once saved as Oregon with no error). **Report every change in
-the same reply that makes it**, with what changed and what it now costs per day. **Any policy warning,
-rejection, disapproval or unexpected spend is an immediate stop and report**, not something to work
-around. **Never touch the payment method, never delete a campaign, audience or creative**: pausing and
-archiving are reversible, deleting is not.
-
-Outside the override, nothing moves. **Google Ads stays fully hands-off** and is not covered by this.
-Email stays draft-only. The override dies on 2026-10-31 without being revoked.
-
-🔒 **Mechanized 2026-09-09:** `~/.claude/hooks/meta-spend-guard.py` (PreToolUse) reads the live account and blocks any Meta
-write over the ceiling; v1.2 adds a PostToolUse read-back. Selftest: `Coloween-2026/marketing/paid-2026/spend-guard-selftest.sh`.
-
-**Scoped override, Coloween sponsorship 2026 LinkedIn sends. Expires 2026-10-31, event night (JJ dated it 2026-09-29).** For this campaign only, Claude may send LinkedIn connection requests and DMs from JJ's logged-in account after JJ batch-approves the exact text: 10-15/day max, random gaps, business hours, human pace, one browser, never parallel. Any LinkedIn warning or friction screen = immediate stop and report. This overrides the standing no-LinkedIn-automation practice for this campaign alone. Email stays draft-only everywhere: the override never touches the never-send-email rule.
-
 ---
 
 # Craft: how the work gets done
@@ -348,8 +326,6 @@ write over the ceiling; v1.2 adds a PostToolUse read-back. Selftest: `Coloween-2
 **A PDF (or any Puppeteer render) that comes out wrong gets diffed against a known-clean render from the same script before any parameter changes, per `systematic-debugging` Phase 2.** Guessing at margin or size values in sequence is the anti-pattern the skill already names; a header/footer collision after a forced page break can look identical at three different margin sizes because the margin was never the cause.
 
 **A single tool saying no is not the system saying no.** Before reporting a tool's refusal as a blocker for JJ to handle, try every other available tool that could reach the same target. When something is found disabled or blocked, also check what happens when the block lifts, don't wait to be asked.
-
-**For Coloween, lead with what people lose by missing the night and contrast it with the ordinary alternative. Never lead with authenticity claims or generic brand declarations.**
 
 **What leaves for an outside party is only what they need to do their job.** Our drafts, our version
 history, our tooling and our verification steps stay inside. Never tell someone a document "replaces
@@ -401,6 +377,7 @@ never on length.
 
 ---
 
+
 # Client records: where a file lives, and what TRUTH.md owes it
 
 Applies to every folder under `JFly.Ai/consulting/clients/`.
@@ -416,6 +393,35 @@ draft it feeds.
 
 A client folder may name its own additional live exceptions in its `CLAUDE.md`. Those are carve-outs
 to this rule, not a restatement of it, and each one is also declared in `truth-drift-check.sh`.
+
+---
+
+
+# Coloween 2026: scoped overrides and copy rule
+
+**Scoped override, Coloween 2026 Meta ads. Approved by JJ 2026-09-09. Expires 2026-10-31, event night.**
+For Meta ad account **359511371520677** and Coloween 2026 only, Claude may operate the account: upload
+creative, build campaigns, ad sets and ads, enable and pause them, and move budget between existing ad
+sets. **Ceiling: $130/day in total account spend.** Anything that would push the account above $130/day,
+or the season above the $9,500 Meta budget, stops and asks first. **This is a deliberate exception to the
+HUMAN ONLY money line in global §4, granted by JJ for this one account and this one season.**
+
+Inside the override, four things still hold. **Read the account back after every write**, because an API
+success is not a correct value (a geo key once saved as Oregon with no error). **Report every change in
+the same reply that makes it**, with what changed and what it now costs per day. **Any policy warning,
+rejection, disapproval or unexpected spend is an immediate stop and report**, not something to work
+around. **Never touch the payment method, never delete a campaign, audience or creative**: pausing and
+archiving are reversible, deleting is not.
+
+Outside the override, nothing moves. **Google Ads stays fully hands-off** and is not covered by this.
+Email stays draft-only. The override dies on 2026-10-31 without being revoked.
+
+🔒 **Mechanized 2026-09-09:** `~/.claude/hooks/meta-spend-guard.py` (PreToolUse) reads the live account and blocks any Meta
+write over the ceiling; v1.2 adds a PostToolUse read-back. Selftest: `Coloween-2026/marketing/paid-2026/spend-guard-selftest.sh`.
+
+**Scoped override, Coloween sponsorship 2026 LinkedIn sends. Expires 2026-10-31, event night (JJ dated it 2026-09-29).** For this campaign only, Claude may send LinkedIn connection requests and DMs from JJ's logged-in account after JJ batch-approves the exact text: 10-15/day max, random gaps, business hours, human pace, one browser, never parallel. Any LinkedIn warning or friction screen = immediate stop and report. This overrides the standing no-LinkedIn-automation practice for this campaign alone. Email stays draft-only everywhere: the override never touches the never-send-email rule.
+
+**For Coloween, lead with what people lose by missing the night and contrast it with the ordinary alternative. Never lead with authenticity claims or generic brand declarations.**
 
 ---
 
