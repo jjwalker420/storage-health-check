@@ -321,7 +321,7 @@ If yes, send.
 
 **Before enabling an inherited ad campaign, read what's already inside it: negative keyword lists, audience exclusions, disapproved assets, old date ranges.** Enabled, eligible and serving still isn't buying. A live campaign with near-zero impressions after 7 days is blocked, not underfunded.
 
-**On any bug, test failure, or unexpected behavior in code, invoke `systematic-debugging` before proposing a fix. Before any multi-step build, invoke `writing-plans` first.** Both fire automatically, every dev session, no need to ask. Root-cause first stops patches that mask the real problem. **A multi-step build that changes something running live (a daemon, a deployed site, a scheduled job) also gets its written plan reviewed by the engineer and Boris in parallel before any code: fold every finding, show JJ, build on his go. Skip it for a one-file fix.** (JJ approved 2026-09-27.)
+**On any bug, test failure, or unexpected behavior in code, invoke `systematic-debugging` before proposing a fix. Before any multi-step build, invoke `writing-plans` first.** Both fire automatically, every dev session, no need to ask. Root-cause first stops patches that mask the real problem. **A multi-step build that changes something running live (a daemon, a deployed site, a scheduled job) also gets its written plan reviewed by the engineer and Boris in parallel before any code: fold every finding, show JJ, build on his go. Every build plan names the model to build on and a helper budget, and the build runs in a fresh session on that model. Skip both for a one-file fix.** (JJ approved 2026-09-27; build model and helper budget 2026-10-01.)
 
 **A PDF (or any Puppeteer render) that comes out wrong gets diffed against a known-clean render from the same script before any parameter changes, per `systematic-debugging` Phase 2.** Guessing at margin or size values in sequence is the anti-pattern the skill already names; a header/footer collision after a forced page break can look identical at three different margin sizes because the margin was never the cause.
 
@@ -413,7 +413,9 @@ rejection, disapproval or unexpected spend is an immediate stop and report**, no
 around. **Never touch the payment method, never delete a campaign, audience or creative**: pausing and
 archiving are reversible, deleting is not.
 
-Outside the override, nothing moves. **Google Ads stays fully hands-off** and is not covered by this.
+**Scoped override, Coloween 2026 Google Ads. Approved by JJ in chat 2026-10-01 ("Google is not hands off for you... I'm open to follow your plan"). Expires 2026-10-31.** For Google Ads customer **181-946-8623** and Coloween 2026 only, Claude may operate the account: turn campaigns, ad groups and keywords on and off, add keywords and negatives, edit ads, and set budgets. **Ceiling: $100/day now, $150/day from 2026-10-15, $200/day from 2026-10-22 (JJ's approved ramp), and $5,300 Google season total; Meta plus Google together stay under the $12,500 season budget.** Anything above stops and asks. There is no Google write API (`write_operations_available: false`), so changes are made in the signed-in Google Ads web UI. The four Meta guards apply: read every change back, report it in the same reply, stop on any policy warning or disapproval, never touch the payment method, never delete a campaign, ad group, keyword or ad (pause or remove-from-serving only).
+
+Outside the overrides, nothing moves. ChatGPT ads and any other ad account stay hands-off.
 Email stays draft-only. The override dies on 2026-10-31 without being revoked.
 
 🔒 **Mechanized 2026-09-09:** `~/.claude/hooks/meta-spend-guard.py` (PreToolUse) reads the live account and blocks any Meta
