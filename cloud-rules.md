@@ -269,7 +269,7 @@ If yes, send.
 
 **A zero or a green is not evidence until you know it could have come out otherwise.** Before citing any all-clear, feed the thing a case it MUST flag and watch it flag. A zero you can't tell apart from a dead credential is not a zero. Ask what WROTE a health signal before trusting it. Test state paths take an env override; prod never does.
 
-**Prove a script's tools under `bash`, not from your shell.** JJ's shell has `find` shimmed as a function, so a command that's dead in the real run looks alive when tested by hand. Watch for `2>/dev/null` eating the error that would have told you.
+**Prove a script's tools under `bash`, not from your shell.** Claude's shell shims `find` and `grep` as functions, so a command that's dead in the real run looks alive when tested by hand. The `grep` shim is ugrep and skips anything a `.gitignore` lists, so its no-hit proves nothing: audits use `/usr/bin/grep -r` or `--no-ignore-files`. Watch for `2>/dev/null` eating the error that would have told you.
 
 **A subagent's "done" is a claim, not a result.** Open the thing it says it shipped before repeating the claim to JJ, or label it UNVERIFIED. JJ's direct account beats any document or agent report, including one of mine.
 
