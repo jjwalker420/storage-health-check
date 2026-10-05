@@ -65,7 +65,7 @@ this whole pack exists to prevent.
 
 # The canonical rules, copied live from JJ's engine
 
-Rules as of 2026-10-01. Do not edit them here: edit the source, the nightly re-stamps.
+Rules as of 2026-10-03. Do not edit them here: edit the source, the nightly re-stamps.
 
 Everything below names paths under `~/.claude`. A cloud session cannot open any of them. The
 rules still apply in full; only the pointers are unreachable, so follow the text you have here.
@@ -75,7 +75,7 @@ rules still apply in full; only the pointers are unreachable, so follow the text
 # VOICE CARD: how Claude writes, everywhere
 
 **Canonical. Loads with `~/.claude/CLAUDE.md` as an @import: at session start, after a compact, and in every subagent. Where any other file disagrees, THIS FILE WINS.**
-The lists are the count: `bash ~/.claude/voice/gate.sh --selftest` prints the active totals. Never restate them here. Snapshot: `~/.claude/voice/_archive/pre-voicebook-2026-08-11/`.
+The lists are the count: `bash ~/.claude/voice/gate.sh --selftest` prints the active totals. Never restate them here.
 Update trigger: "update the voice card."
 
 ## The four locks (JJ's calls, 2026-08-11)
@@ -313,17 +313,9 @@ If yes, send.
 
 **When a transcript, document, or file is the source for a task, read it end to end before writing anything from it**, and pull JJ's actual words out of it. A summary of the source isn't the source. If a specific isn't in the source, ask for it instead of filling the gap.
 
-**Never poll a metered service on a timer from a browser page.** Load, tab focus, and after the user acts.
-
-**Never carry a tuning threshold across a redesign.** Cache the raw fetch, score a real sweep, read the number off the distribution. Confirm you can actually get the credential before writing any client against an API.
-
 **Say what the thing is before you object to it.** One line on the problem and whether it matters, then ONE recommendation. Option menus are for close calls that are genuinely his.
 
-**Before enabling an inherited ad campaign, read what's already inside it: negative keyword lists, audience exclusions, disapproved assets, old date ranges.** Enabled, eligible and serving still isn't buying. A live campaign with near-zero impressions after 7 days is blocked, not underfunded.
-
 **On any bug, test failure, or unexpected behavior in code, invoke `systematic-debugging` before proposing a fix. Before any multi-step build, invoke `writing-plans` first.** Both fire automatically, every dev session, no need to ask. Root-cause first stops patches that mask the real problem. **A multi-step build that changes something running live (a daemon, a deployed site, a scheduled job) also gets its written plan reviewed by the engineer and Boris in parallel before any code: fold every finding, show JJ, build on his go. Every build plan names the model to build on and a helper budget, and the build runs in a fresh session on that model. Skip both for a one-file fix.** (JJ approved 2026-09-27; build model and helper budget 2026-10-01.)
-
-**A PDF (or any Puppeteer render) that comes out wrong gets diffed against a known-clean render from the same script before any parameter changes, per `systematic-debugging` Phase 2.** Guessing at margin or size values in sequence is the anti-pattern the skill already names; a header/footer collision after a forced page break can look identical at three different margin sizes because the margin was never the cause.
 
 **A single tool saying no is not the system saying no.** Before reporting a tool's refusal as a blocker for JJ to handle, try every other available tool that could reach the same target. When something is found disabled or blocked, also check what happens when the block lifts, don't wait to be asked.
 
@@ -331,10 +323,6 @@ If yes, send.
 history, our tooling and our verification steps stay inside. Never tell someone a document "replaces
 the February file" when they never got the February file. Before anything ships, strip every reference
 to what we were working on, every internal file path, and every superseded draft.
-
-**When one person's dashboard is built off another's, keep the shared shell and rail and let each left
-column be that person's actual unit of work.** A panel the second person uses every day earns its place
-even where the first person's page rules it out. (JJ, 2026-09-22.)
 
 ---
 
@@ -431,14 +419,9 @@ write over the ceiling; v1.2 adds a PostToolUse read-back. Selftest: `Coloween-2
 
 ```
 # Canonical banned words: whole-word match, case-insensitive (gate.sh section 2)
-# Rebuilt 2026-08-11 (full 15-source sweep), then TRIMMED the same night by JJ's
-# Voice Book markup: 77 entries legalized across both lists, every rule kept.
-# Pre-markup snapshot: ~/.claude/voice/_archive/pre-voicebook-2026-08-11/
 # NOTE: unlock/unlocks/unlocking moved to gate.sh section 2.5: allowed ONLY next
 # to a real number ("unlocks $30k"), flagged bare (JJ's Q-unlock call, 8/11).
-# 2026-08-11 late: the elevate family completed. JJ's markup freed "elevates" and
-# left its two siblings banned; he ruled family-out on the verification pass, so
-# elevate + elevating came off too. Never type the counts here: they rot.
+# Never type the counts here: they rot.
 # Live totals: bash ~/.claude/voice/gate.sh --selftest
 
 # AI-hype vocabulary
@@ -472,9 +455,6 @@ ecosystem
 
 ```
 # Canonical banned phrases: whole-word-bounded match, case-insensitive (gate.sh section 3)
-# Rebuilt 2026-08-11 (full 15-source sweep), then TRIMMED the same night by JJ's
-# Voice Book markup: 77 entries legalized across both lists, every rule kept.
-# Pre-markup snapshot: ~/.claude/voice/_archive/pre-voicebook-2026-08-11/
 
 # AI-hype phrases
 cutting-edge
