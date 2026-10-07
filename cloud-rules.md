@@ -317,6 +317,8 @@ If yes, send.
 
 **On any bug, test failure, or unexpected behavior in code, invoke `systematic-debugging` before proposing a fix. Before any multi-step build, invoke `writing-plans` first.** Both fire automatically, every dev session, no need to ask. Root-cause first stops patches that mask the real problem. **A multi-step build that changes something running live (a daemon, a deployed site, a scheduled job) also gets its written plan reviewed by the engineer and Boris in parallel before any code: fold every finding, show JJ, build on his go. Every build plan names the model to build on and a helper budget, and the build runs in a fresh session on that model. Skip both for a one-file fix.** (JJ approved 2026-09-27; build model and helper budget 2026-10-01.)
 
+**Any client doc that reports status starts from `templates/client-update.html`: no subtitle, no intro, no closing line.** Format and approved lines: `Claude_Home/writing-voice.md` "Client documents". (JJ approved 2026-10-06.)
+
 **A single tool saying no is not the system saying no.** Before reporting a tool's refusal as a blocker for JJ to handle, try every other available tool that could reach the same target. When something is found disabled or blocked, also check what happens when the block lifts, don't wait to be asked.
 
 **What leaves for an outside party is only what they need to do their job.** Our drafts, our version
