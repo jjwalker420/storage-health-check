@@ -392,7 +392,7 @@ to this rule, not a restatement of it, and each one is also declared in `truth-d
 **Scoped override, Coloween 2026 Meta ads. Approved by JJ 2026-09-09. Expires 2026-10-31, event night.**
 For Meta ad account **359511371520677** and Coloween 2026 only, Claude may operate the account: upload
 creative, build campaigns, ad sets and ads, enable and pause them, and move budget between existing ad
-sets. **Ceiling: $130/day in total account spend.** Anything that would push the account above $130/day,
+sets. **Ceiling: $190/day in total account spend (JJ 2026-10-08, was $130).** Anything that would push the account above $190/day,
 or the season above the $9,500 Meta budget, stops and asks first. **This is a deliberate exception to the
 HUMAN ONLY money line in global §4, granted by JJ for this one account and this one season.**
 
@@ -412,6 +412,8 @@ Email stays draft-only. The override dies on 2026-10-31 without being revoked.
 write over the ceiling; v1.2 adds a PostToolUse read-back. Selftest: `Coloween-2026/marketing/paid-2026/spend-guard-selftest.sh`.
 
 **Scoped override, Coloween sponsorship 2026 LinkedIn sends. Expires 2026-10-31, event night (JJ dated it 2026-09-29).** For this campaign only, Claude may send LinkedIn connection requests and DMs from JJ's logged-in account after JJ batch-approves the exact text: 10-15/day max, random gaps, business hours, human pace, one browser, never parallel. Any LinkedIn warning or friction screen = immediate stop and report. This overrides the standing no-LinkedIn-automation practice for this campaign alone. Email stays draft-only everywhere: the override never touches the never-send-email rule.
+
+**Coloween HQ online copy (JJ 2026-10-07; expires 2026-10-31).** Every HQ rebuild may push the generated page to production on Vercel project `coloween-hq` (coloween-hq.vercel.app) through `hq-share-export.py`, which refuses any other project and runs the fail-closed scan first. Only the generated page, robots.txt and the PIN-gated stills deploy. No domain, no other project, no site-v2 change rides on this.
 
 **For Coloween, lead with what people lose by missing the night and contrast it with the ordinary alternative. Never lead with authenticity claims or generic brand declarations.**
 
