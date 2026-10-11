@@ -65,7 +65,7 @@ this whole pack exists to prevent.
 
 # The canonical rules, copied live from JJ's engine
 
-Rules as of 2026-10-08. Do not edit them here: edit the source, the nightly re-stamps.
+Rules as of 2026-10-10. Do not edit them here: edit the source, the nightly re-stamps.
 
 Everything below names paths under `~/.claude`. A cloud session cannot open any of them. The
 rules still apply in full; only the pointers are unreachable, so follow the text you have here.
@@ -279,7 +279,7 @@ If yes, send.
 
 **Registered, running, and working are three claims, not one.** Check each. A scheduled run that fired and wrote nothing is a failed run. Nothing outside a job is watching it, so **every scheduled job verifies its own artifact before claiming success**: file exists, non-empty, red line and exit 1 when not.
 
-**An email body proves nothing about its attachments.** `gmail_read_message` returns the body only, so a message that reads as a bare signature can still carry the files you want. Prove absence with a `filename:` or `has:attachment` search or `gmail_list_attachments` before writing "no attachment". (JJ, 2026-09-12.)
+**An email body proves nothing about its attachments.** `gmail_read_message` returns the body only, so a message that reads as a bare signature can still carry the files you want. Prove absence with a `filename:` or `has:attachment` search or `gmail_list_attachments` before writing "no attachment".
 
 **Before a brief says something does not exist, list `~/.claude/scheduled-tasks/` and `~/.claude/hooks/` and grep `settings.json`.** A mechanism that exists and isn't in the brief re-specs itself.
 
@@ -315,9 +315,9 @@ If yes, send.
 
 **Say what the thing is before you object to it.** One line on the problem and whether it matters, then ONE recommendation. Option menus are for close calls that are genuinely his.
 
-**On any bug, test failure, or unexpected behavior in code, invoke `systematic-debugging` before proposing a fix. Before any multi-step build, invoke `writing-plans` first.** Both fire automatically, every dev session, no need to ask. Root-cause first stops patches that mask the real problem. **A multi-step build that changes something running live (a daemon, a deployed site, a scheduled job) also gets its written plan reviewed by the engineer and Boris in parallel before any code: fold every finding, show JJ, build on his go. Every build plan names the model to build on and a helper budget, and the build runs in a fresh session on that model. Skip both for a one-file fix.** (JJ approved 2026-09-27; build model and helper budget 2026-10-01.)
+**On any bug, test failure, or unexpected behavior in code, invoke `systematic-debugging` before proposing a fix. Before any multi-step build, invoke `writing-plans` first.** Both fire automatically, every dev session, no need to ask. Root-cause first stops patches that mask the real problem. **A multi-step build that changes something running live (a daemon, a deployed site, a scheduled job) also gets its written plan reviewed by the engineer and Boris in parallel before any code: fold every finding, show JJ, build on his go. Every build plan names the model to build on and a helper budget, and the build runs in a fresh session on that model. Skip both for a one-file fix.**
 
-**Any client doc that reports status starts from `templates/client-update.html`: no subtitle, no intro, no closing line.** Format and approved lines: `Claude_Home/writing-voice.md` "Client documents". (JJ approved 2026-10-06.)
+**Any client doc that reports status starts from `templates/client-update.html`: no subtitle, no intro, no closing line.** Format and approved lines: `Claude_Home/writing-voice.md` "Client documents".
 
 **A single tool saying no is not the system saying no.** Before reporting a tool's refusal as a blocker for JJ to handle, try every other available tool that could reach the same target. When something is found disabled or blocked, also check what happens when the block lifts, don't wait to be asked.
 
